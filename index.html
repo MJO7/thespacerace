@@ -4,12 +4,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
-<script src="./p5.play.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+    <script src="./p5.play.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
 
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD7JlSt_-DhD2r8BKlETQX-ZVT_D9K7SzI",
+    authDomain: "mutliplayergame.firebaseapp.com",
+    databaseURL: "https://mutliplayergame-default-rtdb.firebaseio.com",
+    projectId: "mutliplayergame",
+    storageBucket: "mutliplayergame.appspot.com",
+    messagingSenderId: "678333084562",
+    appId: "1:678333084562:web:004a8fc7a28fbd03aac74b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
   </head>
   <body>
-      <script src="sketch.js"></script>
+    <script src="sketch.js"></script>
   </body>
 </html>

@@ -1,29 +1,32 @@
-var ball;
+var database;
+var car1, car2, car3, car4, cars;
+var car1Img, car2Img, car3Img, car4Img, groundImg, trackImg;
+var game, player, form, playerCount;
+var allPlayers;
+var gameState = 0;
 
-function setup(){
-    createCanvas(500,500);
-    ball = createSprite(250,250,10,10);
-    ball.shapeColor = "red";
+function preload() {
+  car1Img = loadImage("images/spaceship.png");
+  car2Img = loadImage("images/spaceship 2.png");
+  car3Img = loadImage("images/spaceship 3.png");
+  car4Img = loadImage("images/spaceship 4.png");
+  groundImg = loadImage("images/ground.png");
+  trackImg = loadImage("images/track3.png");
+}
+function setup() {
+  createCanvas(displayWidth, displayHeight);
+  database = firebase.database();
+  game = new Game();
+  game.getState();
+  game.start();
 }
 
-function draw(){
-    background("white");
-    if(keyDown(LEFT_ARROW)){
-        changePosition(-1,0);
-    }
-    else if(keyDown(RIGHT_ARROW)){
-        changePosition(1,0);
-    }
-    else if(keyDown(UP_ARROW)){
-        changePosition(0,-1);
-    }
-    else if(keyDown(DOWN_ARROW)){
-        changePosition(0,+1);
-    }
-    drawSprites();
-}
-
-function changePosition(x,y){
-    ball.x = ball.x + x;
-    ball.y = ball.y + y;
+function draw() {
+  background("white");
+  if (playerCount === 4) {
+    game.updateState(1);
+  }
+  if (gameState === 1) {
+    game.play();
+  }
 }
